@@ -161,7 +161,7 @@ angular.module( 'multi-select', ['ng'] ).directive( 'multiSelect' , [ '$sce', '$
 
                         for (var key in $scope.inputModel[ i ] ) {
                             // if filter string is in one of object property                            
-                            if ( typeof $scope.inputModel[ i ][ key ] !== 'boolean'  && String( $scope.inputModel[ i ][ key ] ).toUpperCase().indexOf( $scope.inputLabel.labelFilter.toUpperCase() ) >= 0 ) {
+                            if ( typeof $scope.inputModel[ i ][ key ] !== 'boolean' && typeof $scope.inputModel[i][key] !== 'undefined' && String( $scope.inputModel[ i ][ key ] ).toUpperCase().indexOf( $scope.inputLabel.labelFilter.toUpperCase() ) >= 0 ) {
                                 gotData = true;
                                 break;
                             }
