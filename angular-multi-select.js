@@ -502,7 +502,7 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                     angular.forEach($scope.selectedItems, function (value) {
                         if (typeof value !== 'undefined') {
                             if (ctr < tempMaxLabels) {
-                                $scope.varButtonLabel += ($scope.varButtonLabel.length > 0 ? '</div>, <div class="buttonLabel">' : '<div class="buttonLabel">') + $scope.writeLabel(value, 'buttonLabel');
+                                $scope.varButtonLabel += ($scope.varButtonLabel.length > 0 ? ',</div> <div class="buttonLabel">' : '<div class="buttonLabel">') + $scope.writeLabel(value, 'buttonLabel');
                             }
                             ctr++;
                         }
