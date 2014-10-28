@@ -149,19 +149,19 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                 return typeof value !== 'boolean' && typeof value !== 'undefined';
             };
 
-            var isGroupEnd = function (item) {
+            var isGroupEnd = function(item) {
                 return typeof item[$scope.groupProperty] !== 'undefined' && item[$scope.groupProperty] === false;
             };
 
-            var isGroupStart = function (item) {
+            var isGroupStart = function(item) {
                 return typeof item[$scope.groupProperty] !== 'undefined' && item[$scope.groupProperty] === true;
             };
 
-            var isNotTicked = function (item) {
+            var isNotTicked = function(item) {
                 return typeof item[$scope.tickProperty] !== 'undefined' && item[$scope.tickProperty] === false;
             };
 
-            var isTicked = function (item) {
+            var isTicked = function(item) {
                 return typeof item[$scope.tickProperty] !== 'undefined' && item[$scope.tickProperty] === true;
             };
 
@@ -329,7 +329,7 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                         tempArr = [],
                         nestLevel = 0,
                         inputModelIndex;
-
+                    
                     for (i = index; i < $scope.filteredModel.length; i++) {
 
                         if (nestLevel === 0 && i > index) {
@@ -485,7 +485,7 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                 // refresh button label...
                 if ($scope.selectedItems.length === 0) {
                     // https://github.com/isteven/angular-multi-select/pull/19
-                    $scope.varButtonLabel = (typeof $scope.defaultLabel !== 'undefined') ? $scope.defaultLabel : 'None selected';
+                    $scope.varButtonLabel = (typeof $scope.defaultLabel !== 'undefined') ? $scope.defaultLabel : '<div>None selected</div>';
                 } else {
                     var tempMaxLabels = $scope.selectedItems.length;
                     if (typeof $scope.maxLabels !== 'undefined' && $scope.maxLabels !== '') {
@@ -502,18 +502,19 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                     angular.forEach($scope.selectedItems, function (value) {
                         if (typeof value !== 'undefined') {
                             if (ctr < tempMaxLabels) {
-                                $scope.varButtonLabel += ($scope.varButtonLabel.length > 0 ? ',</div> <div class="buttonLabel">' : '<div class="buttonLabel">') + $scope.writeLabel(value, 'buttonLabel');
+                                $scope.varButtonLabel += ($scope.varButtonLabel.length > 0 ? '</div> <div class="buttonLabel">' : '<div class="buttonLabel">') + $scope.writeLabel(value, 'buttonLabel') + '</div>';
                             }
                             ctr++;
                         }
                     });
 
                     if ($scope.more === true) {
+                        $scope.varButtonLabel += '<div class="buttonLabel">';
                         // https://github.com/isteven/angular-multi-select/pull/16
                         if (tempMaxLabels > 0) {
-                            $scope.varButtonLabel += ', ... ';
+                            $scope.varButtonLabel += '... ';
                         }
-                        $scope.varButtonLabel += '(Total: ' + $scope.selectedItems.length + ')';
+                        $scope.varButtonLabel += '(Total: ' + $scope.selectedItems.length + ')</div>';
                     }
                 }
                 $scope.varButtonLabel = $sce.trustAsHtml($scope.varButtonLabel + '<span class="caret"></span>');
@@ -680,7 +681,7 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                 return null;
             };
 
-            var setSelectionAll = function (newValue /*: boolean*/) {
+            var setSelectionAll = function(newValue /*: boolean*/) {
                 var modelLength = $scope.filteredModel.length;
                 for (var i = 0; i < modelLength; i++) {
                     var value = $scope.filteredModel[i];
@@ -892,16 +893,16 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                 $scope.isDisabled = newVal;
             });
 
-            var touchHandler = function (moved /*: boolean*/) {
-                $scope.$apply(function () {
+            var touchHandler = function(moved /*: boolean*/) {
+                $scope.$apply(function() {
                     $scope.scrolled = moved;
                 });
             };
-
+ 
             // this is for touch enabled devices. We don't want to hide checkboxes on scroll. 
             angular.element(document)
-                .bind('touchstart', function () { touchHandler(false); })
-                .bind('touchmove', function () { touchHandler(true); });
+                .bind('touchstart', function() { touchHandler(false); })
+                .bind('touchmove', function() { touchHandler(true); });
         }
     }
 }]);
