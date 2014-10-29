@@ -512,7 +512,7 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                         $scope.varButtonLabel += '<div class="buttonLabel">';
                         // https://github.com/isteven/angular-multi-select/pull/16
                         if (tempMaxLabels > 0) {
-                            $scope.varButtonLabel += '... ';
+                            $scope.varButtonLabel += '&nbsp;... ';
                         }
                         $scope.varButtonLabel += '(Total: ' + $scope.selectedItems.length + ')</div>';
                     }

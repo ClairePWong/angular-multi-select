@@ -64,6 +64,7 @@
 /* labels on the button */
 .multiSelect .buttonLabel {
     padding: 2px 0px 2px 0px;
+    text-align: initial;
 }
 
 /* downward pointing arrow */
