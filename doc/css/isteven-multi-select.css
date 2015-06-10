@@ -22,7 +22,7 @@
 
 /* ! create a "column" */
 .multiSelect .acol {
-    display: inline-block;    
+    display: inline-block;
     min-width: 12px;
 }
 
@@ -35,22 +35,22 @@
 .multiSelect > button {
     display: inline-block;
     position: relative;
-    text-align: center;    
+    text-align: center;
     cursor: pointer;
-    border: 1px solid #c6c6c6;    
-    padding: 1px 8px 1px 8px;    
+    border: 1px solid #c6c6c6;
+    padding: 1px 8px 1px 8px;
     font-size: 14px;
     min-height : 38px !important;
     border-radius: 4px;
-    color: #555;   
+    color: #555;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
-    user-select: none; 
-    white-space:normal;
+    user-select: none;
+    white-space: normal;
     background-color: #fff;
-    background-image: linear-gradient(#fff, #f7f7f7);      
+    background-image: linear-gradient(#fff, #f7f7f7);
 }
 
 /* button: hover */
@@ -72,8 +72,8 @@
 
 /* labels on the button */
 .multiSelect .buttonLabel {
-    display: inline-block;
-    padding: 5px 0px 5px 0px; 
+    padding: 2px 0px 2px 0px;
+    text-align: initial;
 }
 
 /* downward pointing arrow */
@@ -81,12 +81,12 @@
     display: inline-block;
     width: 0;
     height: 0;
-    margin: 0px 0px 1px 12px  !important;    
+    margin: 0px 0px 1px 0px  !important;
     vertical-align: middle;
     border-top: 4px solid #333;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
-    border-bottom: 0 dotted; 
+    border-bottom: 0 dotted;
 }
 
 /* the main checkboxes and helper layer */
@@ -97,8 +97,8 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);    
-    min-width:278px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    min-width: 278px;
     display: none !important;    
 }
 
@@ -117,7 +117,7 @@
     height: 26px;
     font-size: 13px;
     border-radius: 2px;
-    color: #666;    
+    color: #666;
     background-color: #f1f1f1;
     line-height: 1.6;
     margin: 0px 0px 8px 0px;
@@ -142,24 +142,24 @@
     width: 22px;
     font-size: 13px;
     border-radius: 2px;
-    color: #666;    
+    color: #666;
     background-color: #f1f1f1;
     line-height: 1.4;
-    right : 2px;
+    right: 2px;
     top: 4px;
 }
 
 /* filter */
 .multiSelect .inputFilter {
-    border-radius: 2px; 
+    border-radius: 2px;
     border: 1px solid #ccc;
     height: 26px;
     font-size: 14px;
-    width:100%;    
-    padding-left:7px;
+    width: 100%;
+    padding-left: 7px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */    
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
     color: #888;
     margin: 0px 0px 8px 0px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
@@ -170,8 +170,8 @@
 .multiSelect .clearButton:hover,
 .multiSelect .helperButton:hover {
     border: 1px solid #ccc;
-    color: #999;    
-    background-color: #f4f4f4;    
+    color: #999;
+    background-color: #f4f4f4;
 }
 .multiSelect .helperButton:disabled {
     color: #ccc;    
@@ -203,13 +203,13 @@
 .multiSelect .multiSelectItem {
     display: block;
     padding: 3px;
-    color: #444;       
+    color: #444;
     white-space: nowrap;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
-    user-select: none;      
+    user-select: none;
     border: 1px solid transparent;
     position: relative;
     min-width:278px;    
@@ -256,22 +256,22 @@
 .multiSelect .multiSelectItem span:hover, 
 .multiSelect .multiSelectGroup span:hover
 {    
-    cursor: pointer;  
+    cursor: pointer;
 }
 
 /* ! group labels */
-.multiSelect .multiSelectGroup {    
+.multiSelect .multiSelectGroup {
     display: block;
     clear: both;
 }
 
 /* right-align the tick mark (&#10004;) */
 .multiSelect .tickMark {
-    display:inline-block; 
-    position: absolute; 
-    right: 10px; 
+    display: inline-block;
+    position: absolute;
+    right: 10px;
     top: 7px;
-    font-size: 10px;          
+    font-size: 10px;
 }
 
 /* hide the original HTML checkbox away */
@@ -293,7 +293,7 @@
 /* If you use images in button / checkbox label, you might want to change the image style here. */
 .multiSelect img {
     vertical-align: middle;
-    margin-bottom:0px;
+    margin-bottom: 0px;
     max-height: 22px;
     max-width:22px;
 }
