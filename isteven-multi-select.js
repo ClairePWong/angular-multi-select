@@ -434,6 +434,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     var inputModelIndex = $scope.filteredModel[ index ][ $scope.indexProperty ];                                        
                     $scope.inputModel[ inputModelIndex ][ $scope.tickProperty ] = $scope.filteredModel[ index ][ $scope.tickProperty ];                    
                 }                                  
+                $scope.refreshOutputModel();
 
                 // we execute the callback function here
                 clickedItem = angular.copy( item );                                                    
@@ -446,8 +447,8 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     }, 0 );                                                 
                 }                                    
                 
-                $scope.refreshOutputModel();
-                $scope.refreshButton();                              
+
+                $scope.refreshButton();
 
                 // We update the index here
                 prevTabIndex = $scope.tabIndex;
