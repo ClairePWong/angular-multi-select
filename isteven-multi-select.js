@@ -410,30 +410,24 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                 // if an item (not group marker) is clicked
                 else {
 
-                    // If it's single selection mode
-                    if ( typeof attrs.selectionMode !== 'undefined' && attrs.selectionMode.toUpperCase() === 'SINGLE' ) {
-                        
-                        // first, set everything to false
-                        for( i=0 ; i < $scope.filteredModel.length ; i++) {                            
-                            $scope.filteredModel[ i ][ $scope.tickProperty ] = false;                            
-                        }        
-                        for( i=0 ; i < $scope.inputModel.length ; i++) {                            
-                            $scope.inputModel[ i ][ $scope.tickProperty ] = false;                            
-                        }        
-                        
-                        // then set the clicked item to true
-                        $scope.filteredModel[ index ][ $scope.tickProperty ] = true;                                                                 
-                    }   
+                    // toggle the selected item
+                    $scope.filteredModel[ index ][ $scope.tickProperty ] = !$scope.filteredModel[ index ][ $scope.tickProperty ];
 
-                    // Multiple
-                    else {
-                        $scope.filteredModel[ index ][ $scope.tickProperty ]   = !$scope.filteredModel[ index ][ $scope.tickProperty ];
+                    // If it's single selection mode, then clear other selected item
+                    if ( typeof attrs.selectionMode !== 'undefined' && attrs.selectionMode.toUpperCase() === 'SINGLE' ) {
+
+                        for( i=0 ; i < $scope.filteredModel.length ; i++) {
+                            if (i !== index) {
+                                $scope.filteredModel[i][$scope.tickProperty] = false;
+                            }
+                        }
                     }
 
                     // we refresh input model as well
                     var inputModelIndex = $scope.filteredModel[ index ][ $scope.indexProperty ];                                        
-                    $scope.inputModel[ inputModelIndex ][ $scope.tickProperty ] = $scope.filteredModel[ index ][ $scope.tickProperty ];                    
-                }                                  
+                    $scope.inputModel[ inputModelIndex ][ $scope.tickProperty ] = $scope.filteredModel[ index ][ $scope.tickProperty ];
+                }
+
                 $scope.refreshOutputModel();
 
                 // we execute the callback function here
@@ -446,7 +440,6 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                         clickedItem = null;                    
                     }, 0 );                                                 
                 }                                    
-                
 
                 $scope.refreshButton();
 
