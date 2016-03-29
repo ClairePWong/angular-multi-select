@@ -434,12 +434,13 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                 clickedItem = angular.copy( item );
                 if ( clickedItem !== null ) {
                     delete clickedItem[ $scope.indexProperty ];
-                    delete clickedItem[ $scope.spacingProperty ];
-                    $scope.onItemClick( { data: clickedItem } );
-                    clickedItem = null;
-
+                    delete clickedItem[$scope.spacingProperty];
                     // digest
-                    $timeout( function() { }, 0 );
+                    $timeout((function (clickedItem) { return function () {
+                        $scope.onItemClick({ data: clickedItem });
+                    }})(clickedItem), 0);
+
+                    clickedItem = null;
                 }
 
                 $scope.refreshButton();
