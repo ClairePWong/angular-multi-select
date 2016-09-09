@@ -126,9 +126,18 @@
     line-height: 1.6;
     margin: 0px 0px 8px 0px;
 }
+.multiSelect .line .helperButton:first-of-type:before{
+    content:"\2713";
+}
+.multiSelect .line .helperButton:last-of-type:before{
+    content:"\00D7";
+}
 
 .multiSelect .helperButton.reset{
     float: right;
+}
+.multiSelect .helperButton.reset:before{
+    content:"\00D7";
 }
 
 .multiSelect .helperButton:not( .reset ) {
@@ -151,6 +160,9 @@
     line-height: 1.4;
     right : 2px;
     top: 4px;
+}
+.multiSelect .clearButton:before{
+    content:"\00D7";
 }
 
 /* filter */
@@ -276,6 +288,9 @@
     right: 10px;
     top: 7px;
     font-size: 10px;
+}
+.multiSelect .tickMark:before{
+    content:"\2713";
 }
 
 /* hide the original HTML checkbox away */
