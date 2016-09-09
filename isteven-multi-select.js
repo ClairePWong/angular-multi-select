@@ -952,20 +952,20 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
 
             // configurable button labels
             if ( typeof attrs.translation !== 'undefined' ) {
-                $scope.lang.selectAll       = $sce.trustAsHtml( $scope.icon.selectAll  + '&nbsp;&nbsp;' + $scope.translation.selectAll );
-                $scope.lang.selectNone      = $sce.trustAsHtml( $scope.icon.selectNone + '&nbsp;&nbsp;' + $scope.translation.selectNone );
-                $scope.lang.reset           = $sce.trustAsHtml( $scope.icon.reset      + '&nbsp;&nbsp;' + $scope.translation.reset );
+                $scope.lang.selectAll       = $sce.trustAsHtml( $scope.translation.selectAll );
+                $scope.lang.selectNone      = $sce.trustAsHtml( $scope.translation.selectNone );
+                $scope.lang.reset           = $sce.trustAsHtml( $scope.translation.reset );
                 $scope.lang.search          = $scope.translation.search;
                 $scope.lang.nothingSelected = $sce.trustAsHtml( $scope.translation.nothingSelected );
             }
             else {
-                $scope.lang.selectAll       = $sce.trustAsHtml( $scope.icon.selectAll  + '&nbsp;&nbsp;Select all' );
-                $scope.lang.selectNone      = $sce.trustAsHtml( $scope.icon.selectNone + '&nbsp;&nbsp;Select none' );
-                $scope.lang.reset           = $sce.trustAsHtml( $scope.icon.reset      + '&nbsp;&nbsp;Reset' );
+                $scope.lang.selectAll       = $sce.trustAsHtml( 'Select all' );
+                $scope.lang.selectNone      = $sce.trustAsHtml( 'Select none' );
+                $scope.lang.reset           = $sce.trustAsHtml( 'Reset' );
                 $scope.lang.search          = 'Search...';
                 $scope.lang.nothingSelected = 'None selected';
             }
-            $scope.icon.tickMark = $sce.trustAsHtml( $scope.icon.tickMark );
+            $scope.icon.tickMark = "";
 
             // min length of keyword to trigger the filter function
             if ( typeof attrs.MinSearchLength !== 'undefined' && parseInt( attrs.MinSearchLength ) > 0 ) {
@@ -1076,7 +1076,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                             'ng-change="searchChanged()" class="inputFilter"'+
                             '/>'+
                         // clear button
-                        '<button type="button" class="clearButton" ng-click="clearClicked( $event )" >×</button> '+
+                        '<button type="button" class="clearButton" ng-click="clearClicked( $event )" ></button> '+
                     '</div> '+
                 '</div> '+
                 // selection items
