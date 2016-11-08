@@ -44,7 +44,7 @@
     border: 1px solid #c6c6c6;
     padding: 1px 8px 1px 8px;
     font-size: 14px;
-    min-height : 38px !important;
+    min-height : 38px;
     border-radius: 4px;
     color: #555;
     -webkit-user-select: none;
@@ -85,7 +85,7 @@
     display: inline-block;
     width: 0;
     height: 0;
-    margin: 0px 0px 1px 12px  !important;
+    margin: 0px 0px 1px 12px ;
     vertical-align: middle;
     border-top: 4px solid #333;
     border-right: 4px solid transparent;
@@ -103,7 +103,7 @@
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     min-width:278px;
-    display: none !important;
+    display: none;
 }
 
 /* container of helper elements */
@@ -197,10 +197,10 @@
 .multiSelect .clearButton:focus,
 .multiSelect .helperButton:focus,
 .multiSelect .inputFilter:focus {
-    border: 1px solid #66AFE9 !important;
+    border: 1px solid #66AFE9;
     outline: 0;
-    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6) !important;
-            box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6) !important;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6);
 }
 
 /* container of multi select items */
@@ -212,7 +212,7 @@
 
 /* ! to show / hide the checkbox layer above */
 .multiSelect .show {
-    display: block !important;
+    display: block;
 }
 
 /* item labels */
@@ -254,18 +254,18 @@
 /* item labels focus on mouse hover */
 .multiSelect .multiSelectItem:hover,
 .multiSelect .multiSelectGroup:hover {
-    background-image: linear-gradient( #c1c1c1, #999 ) !important;
-    color: #fff !important;
+    background-image: linear-gradient( #c1c1c1, #999 );
+    color: #fff;
     cursor: pointer;
-    border: 1px solid #ccc !important;
+    border: 1px solid #ccc;
 }
 
 /* item labels focus using keyboard */
 .multiSelect .multiSelectFocus {
-    background-image: linear-gradient( #c1c1c1, #999 ) !important;
-    color: #fff !important;
+    background-image: linear-gradient( #c1c1c1, #999 );
+    color: #fff;
     cursor: pointer;
-    border: 1px solid #ccc !important;
+    border: 1px solid #ccc;
 }
 
 /* change mouse pointer into the pointing finger */
@@ -295,7 +295,7 @@
 
 /* hide the original HTML checkbox away */
 .multiSelect .checkbox {
-    color: #ddd !important;
+    color: #ddd;
     position: absolute;
     left: -9999px;
     cursor: pointer;
@@ -305,8 +305,8 @@
 .multiSelect .disabled,
 .multiSelect .disabled:hover,
 .multiSelect .disabled label input:hover ~ span {
-    color: #c4c4c4 !important;
-    cursor: not-allowed !important;
+    color: #c4c4c4;
+    cursor: not-allowed;
 }
 
 /* If you use images in button / checkbox label, you might want to change the image style here. */
